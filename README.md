@@ -20,10 +20,6 @@ UserParameter=services.raw,echo "{\"data\":[$(systemctl list-unit-files|grep "\.
 
 UserParameter=systemctl.status[*],state=$(systemctl status zabbix-agent | grep Active | cut -d ' ' -f 5); test $state = 'active' && echo "1" || echo "0"
 
-- Arquivo do Template YAML
-
-Template Linux INTEROP Custom
-
 
 Template versão Zabbix 6.0 para O.S. Windows customizado :
 Obs:
@@ -32,15 +28,16 @@ Sobre a descoberta dos serviços Windows, o mesmo realiza a descoberta apenas de
 
 {$SERVICE.NAME.NOT}
 
+==============================================================
 
-MSSQL by ODBC
+# MSSQL by ODBC
 Overview
 For Zabbix version: 6.2 and higher
 The template is developed for monitoring DBMS Microsoft SQL Server via ODBC.
 
 This template was tested on:
 
-Microsoft SQL, version 2017, 2019
+# Microsoft SQL, version 2017, 2019
 Setup
 See Zabbix template operation for basic instructions.
 
